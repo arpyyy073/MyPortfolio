@@ -1,0 +1,74 @@
+.hero-container {
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffa500;
+}
+
+.nav-links {
+  list-style: none;
+
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.contact-btn {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.text-content h1 {
+  font-size: 48px;
+}
+
+.highlight {
+  color: #ffa500;
+}
+
+.hire-btn {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.contact-info p {
+  margin-top: 10px;
+}
+
+.image-content img {
+  max-width: 400px;
+  border-radius: 10px;
+}
