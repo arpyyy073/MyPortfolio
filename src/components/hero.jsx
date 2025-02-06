@@ -1,43 +1,90 @@
-import React from 'react';
-import arp from '../assets/images/hero-image.png';
-
+import React, { useEffect, useState } from "react";
+import facebook from "../assets/images/facebook.svg";
+import git from "../assets/images/git2.svg";
+import email from "../assets/images/envelope.svg";
+import arpFront from "../assets/images/hero-image.png";
+import arpBack from "../assets/images/plus.jpg";
+import ParticlesBackground from "./ParticlesBackground"; 
+import logo from "../assets/images/black-logo.png";
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+
+  // Array of phrases to cycle through
+  const phrases = [
+    "Arp-J Villares",
+    "an Arduino Developer.",
+    "a Pro Player in Pixels.xyz",
+    "Level 500 in Pixels.xyz",
+    "Ranked Mythic in Mobile Legends:Bang Bang."
+  ];
+
+  const typingSpeed = 150; // Speed of typing
+  const deleteSpeed = 100; // Speed of deleting
+  const delayBeforeDelete = 1500; // Delay before deleting text
+
+  useEffect(() => {
+    let typingInterval;
+
+    if (!isDeleting && index < phrases[phraseIndex].length) {
+      typingInterval = setTimeout(() => {
+        setTypedText((prev) => phrases[phraseIndex].substring(0, prev.length + 1));
+        setIndex((prev) => prev + 1);
+      }, typingSpeed);
+    } else if (isDeleting && index > 0) {
+      typingInterval = setTimeout(() => {
+        setTypedText((prev) => phrases[phraseIndex].substring(0, prev.length - 1));
+        setIndex((prev) => prev - 1);
+      }, deleteSpeed);
+    } else if (!isDeleting && index === phrases[phraseIndex].length) {
+      typingInterval = setTimeout(() => setIsDeleting(true), delayBeforeDelete);
+    } else if (isDeleting && index === 0) {
+      setIsDeleting(false);
+      setPhraseIndex((prev) => (prev + 1) % phrases.length); // Move to the next phrase
+    }
+
+    return () => clearTimeout(typingInterval);
+  }, [index, isDeleting, phraseIndex]);
+
   return (
     <div className="hero-container">
+      <ParticlesBackground />
+      
       <nav className="navbar">
-        <div className="logo">AV</div>
+        <div className="logo">
+          <img src={logo} alt="logo" className="logo-icon" />
+        </div>
         <ul className="nav-links">
-          <li><a href="#portfolio">portfolio</a></li>
-          <li><a href="#about">about me</a></li>
-          <li><a href="#blog">my blog</a></li>
-          <li><a href="#reviews">reviews</a></li>
-          <li><a href="#contact">contact me</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#blog">My Blog</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact Me</a></li>
         </ul>
-        <button className="contact-btn">Contact Me</button>
       </nav>
 
       <div className="hero-content">
         <div className="text-content">
-          <p>Hi There,</p>
-          <h1>
-            I am <span className="highlight">Arp-J</span> Villares
+          <p className="fade-in">Hi There,</p>
+          <h1 className="typing-effect">
+            <span className="white-text">I am</span>
+            <span className="highlight"> {typedText}</span>
+            <span className="cursor">|</span>
           </h1>
-          <h2>I am a Arduino Developer</h2>
-          <p className="description">
-          Passionate Arduino Developer with a knack for creating innovative embedded systems and IoT solutions. Skilled in programming microcontrollers, sensor integration, and hardware prototyping to bring ideas to life. Always eager to explore new technologies and push the boundaries of automation and electronics.
-          </p>
-          <button className="hire-btn">Hire Me</button>
-
-          <div className="contact-info">
-            <p><strong>Email:</strong> arparpvillares07@gmail.com</p>
-            <p><strong>Phone:</strong> 09938343981</p>
-            <p><strong>Location:</strong> Zamboanga City</p>
-          </div>
         </div>
 
-        <div className="image-content">
-          <img src={arp} alt="" />
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img src={arpFront} alt="Front" />
+            </div>
+            <div className="flip-card-back">
+              <img src={arpBack} alt="Back" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
