@@ -1,9 +1,9 @@
 import Hero from "./components/Hero.jsx"
 import About from "./components/About.jsx"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import './assets/styles/hero.css';
-import './assets/styles/navbar.css';
-import './assets/styles/about.css';
+import './assets/styles/Hero.css';
+import './assets/styles/Navbar.css';
+import './assets/styles/About.css';
 
 
 
