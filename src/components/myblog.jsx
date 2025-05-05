@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ Use Link instead of <a>
 import '../assets/style/myblog.css';
+import blog1 from "../assets/images/city3.jpg"
+import blog2 from "../assets/images/sbecc-subic.jpg"
+import blog3 from "../assets/images/groupmuseum.jpg"
+import blog4 from "../assets/images/hytec2.jpg"
+import blog5 from "../assets/images/LRT2.jpg"
+import blog6 from "../assets/images/sit.jpg"
+import blog7 from "../assets/images/nightmarket.jpg"
+
 
 const posts = [
   {
@@ -8,49 +16,49 @@ const posts = [
     title: 'Day 1 - City Tour',
     date: 'April 7, 2025',
     excerpt: 'Luneta - Fort Santiago - SM MOA',
-    image: 'src/assets/images/city3.jpg'
+    image: blog1,
   },
   {
     id: 2,
     title: 'Day 2 - Subic',
     date: 'April 8, 2025',
     excerpt: 'SBECC MUSEUM - Subic Police Station - Subic Free Port',
-    image: 'src/assets/images/sbecc-subic.jpg'
+    image: blog2,
   },
   {
     id: 3,
     title: 'Day 3 - National Museum of Natural History',
     date: 'April 9, 2025',
     excerpt: 'Natural History Museum - Quezon Shrine - Presidential Car Museum',
-    image: 'src/assets/images/museum.jpg'
+    image: blog3,
   },
   {
     id: 4,
     title: 'Day 4 - Hytec Power Inc.',
     date: 'April 10, 2025',
     excerpt: 'Bangko Sentral - Hytec Power Inc.',
-    image: 'src/assets/images/hytec2.jpg'
+    image: blog4,
   },
   {
     id: 5,
     title: 'Day 5 - LRT-LINE 2',
     date: 'April 11, 2025',
     excerpt: 'MMDA - LRT-LINE 2',
-    image: 'src/assets/images/LRT2.jpg'
+    image: blog5,
   },
   {
     id: 6,
     title: 'Day 6 - Bound to Baguio',
     date: 'March 12, 2025',
     excerpt: 'Strawberry Farm - Chinese Bell Church - Mines View Park',
-    image: 'src/assets/images/pmabaguio.jpg'
+    image: blog6,
   },
   {
     id: 7,
     title: 'Day 7 - Baguio Night Market',
     date: 'March 13, 2025',
     excerpt: 'Burnham Park - Baguio Night Market',
-    image: 'src/assets/images/nightmarket.jpg'
+    image: blog7,
   },
 ];
 

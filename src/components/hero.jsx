@@ -4,8 +4,15 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import '../assets/style/hero.css';
 import pic from '../assets/images/pic2.jpg';
+import { useNavigate } from 'react-router-dom';
+
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
   return (
     <section className="hero-section">
       {/* Main Content */}
@@ -38,8 +45,9 @@ const Hero = () => {
             />
           </div>
           <div className="hero-buttons">
-            <button className="btn-primary">GET IN TOUCH ↗</button>
-            <button className="btn-outline">DOWNLOAD CV ⬇</button>
+          <button className="btn-primary" onClick={handleContactClick}>
+        GET IN TOUCH ↗
+      </button>
           </div>
         </div>
       </div>
