@@ -1,0 +1,122 @@
+
+
+
+
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.hero-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Burger Icon */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 200; /* Keep burger above the curtain */
+}
+
+.burger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--burger-bar);
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+/* Desktop Nav */
+.curtain-nav {
+  display: flex;
+}
+
+.curtain-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.curtain-nav li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline Hover Effect */
+.curtain-nav li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: var(--link-hover-color);
+  transition: width 0.3s ease;
+}
+
+.curtain-nav li a:hover::after {
+  width: 100%;
+}
+
+.curtain-nav li a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .curtain-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--curtain-bg, rgba(0, 0, 0, 0.95));
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 150; /* Make sure it's below .burger */
+  }
+
+  .curtain-nav.open {
+    transform: translateY(0);
+  }
+
+  .curtain-nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .curtain-nav li a {
+    font-size: 1.5rem;
+  }
+
+  .curtain-nav li a::after {
+    height: 3px;
+    bottom: -6px;
+  }
+}
+

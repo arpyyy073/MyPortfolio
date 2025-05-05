@@ -1,0 +1,35 @@
+/* ===============================
+   THEME VARIABLES
+================================= */
+:root {
+  --background: #ffffff;
+  --text-color: #111111;
+  --accent-color: #000000;
+  --link-hover-color: #0400ffb4;
+  --card-outline-color: rgba(0, 0, 0, 0.1);
+  --curtain-bg: rgba(20, 20, 20, 0.97);
+  --burger-bar: #000000;
+}
+
+[data-theme="dark"] {
+  --background: #000000;
+  --text-color: #ffffff;
+  --accent-color: #ffffff;
+  --card-outline-color: rgba(255, 255, 255, 0.1);
+  --burger-bar: #ffffff;
+}
+
+
+/* ===============================
+   BASE STYLES
+================================= */
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: sans-serif;
+}
+
+/* ===============================
+

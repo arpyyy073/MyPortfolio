@@ -1,0 +1,122 @@
+:root {
+  --accent-color: #00adb5;
+  --background-light: #f5f5f5;
+  --text-light: #111;
+  --background-dark: #121212;
+  --text-dark: #fff;
+}
+
+/* Light Mode (default) */
+.project-section {
+  background: var(--background-light);
+  color: var(--text-light);
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-section {
+    background: var(--background-dark);
+    color: var(--text-dark);
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  color: var(--accent-color);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding-bottom: 1rem;
+  border: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .project-card {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    border: 1px solid white;
+  }
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0.6rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .project-links {
+  opacity: 1;
+}
+
+.icon-link {
+  font-size: 1.8rem;
+  color: white;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card .tech {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-card .description {
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}

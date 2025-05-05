@@ -1,0 +1,28 @@
+.theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem; /* default position */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.75rem;
+  font-weight: bold;
+  user-select: none;
+  z-index: 1000;
+  background-color: var(--background);
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: color 0.3s;
+}
+
+.theme-toggle button.active {
+  color: var(--accent-color);
+}
