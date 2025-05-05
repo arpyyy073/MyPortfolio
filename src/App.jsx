@@ -9,6 +9,7 @@ import Contact from './components/contact';
 import MyProject from './components/myproject';
 import MyBlog from './components/myblog';
 import BlogDetail from './components/blogdetail';
+import Certificate from './components/certificate';
 import Nav from './components/nav'; // ThemeToggle will be included inside Nav
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/projects" element={<MyProject />} />
             <Route path="/blog" element={<MyBlog />} />
             <Route path="/blogdetail/:id" element={<BlogDetail />} />
+            <Route path="/certificate" element={<Certificate />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

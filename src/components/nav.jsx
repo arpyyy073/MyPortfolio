@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/style/nav.css';
-import ThemeToggle from './themetoggle'; // ⬅️ import your toggle
+import ThemeToggle from './themetoggle';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +29,7 @@ const Nav = () => {
           <li><Link to="/experience" onClick={toggleCurtain}>Experience</Link></li>
           <li><Link to="/projects" onClick={toggleCurtain}>Projects</Link></li>
           <li><Link to="/blog" onClick={toggleCurtain}>Blogs</Link></li>
+          <li><Link to="/certificate" onClick={toggleCurtain}>Certificates</Link></li> {/* 🔗 New Link */}
           <li><Link to="/contact" onClick={toggleCurtain}>Contact</Link></li>
         </ul>
 
