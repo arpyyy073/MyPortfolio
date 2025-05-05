@@ -6,7 +6,7 @@ import blog2 from "../assets/images/subicpolice.jpg"
 import blog3 from "../assets/images/nationalm.jpg"
 import blog4 from "../assets/images/hytec2.jpg"
 import blog5 from "../assets/images/santolan.jpg"
-import blog6 from "../assets/images/pmagroup.jpg"
+import blog6 from "../assets/images/PMAgroup.jpg"
 import blog7 from "../assets/images/nightmarket.jpg"
 
 
